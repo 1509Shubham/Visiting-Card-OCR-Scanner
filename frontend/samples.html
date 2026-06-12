@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Visiting Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .instructions h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-image {
+            width: 100%;
+            height: 300px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-bottom: 3px solid #667eea;
+            font-family: 'Arial', sans-serif;
+        }
+        .card-top {
+            text-align: right;
+        }
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .company-tagline {
+            font-size: 11px;
+            color: #666;
+        }
+        .card-middle {
+            text-align: left;
+        }
+        .person-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .designation {
+            font-size: 12px;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        .card-bottom {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .download-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .download-btn:hover {
+            background: #764ba2;
+        }
+        .card-info {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .card-description {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📇 Sample Visiting Cards for Testing</h1>
+        
+        <div class="instructions">
+            <h2>How to Use:</h2>
+            <ol>
+                <li>Choose a sample card below</li>
+                <li>Take a screenshot of the card image</li>
+                <li>Save the screenshot as a JPG or PNG file</li>
+                <li>Go to the <a href="/">Upload</a> page</li>
+                <li>Upload the screenshot to test the OCR system</li>
+            </ol>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 1: Sales Executive -->
+            <div class="card">
+                <div class="card-image">
+                    <div class="card-top">
+                        <div class="company-name">TechVision Inc.</div>
+                        <div class="company-tagline">Innovation in Digital Solutions</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name">John Smith</div>
+                        <div class="designation">Sales Director</div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="contact-info">
+                            <div>📧 john.smith@techvision.com</div>
+                            <div>📱 +1-555-123-4567</div>
+                            <div>🌐 www.techvision.com</div>
+                            <div>📍 San Francisco, CA 94105</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 1: Sales Executive</div>
+                    <div class="card-description">Professional sales executive card with all standard contact information</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Software Engineer -->
+            <div class="card">
+                <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <div class="card-top">
+                        <div class="company-name" style="color: white;">NeoCode Solutions</div>
+                        <div class="company-tagline" style="color: rgba(255,255,255,0.8);">Building Tomorrow's Software</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name" style="color: white;">Sarah Johnson</div>
+                        <div class="designation" style="color: #FFD700;">Senior Software Engineer</div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="contact-info">
+                            <div>📧 sarah.johnson@neocode.io</div>
+                            <div>📱 +44-20-7946-0958</div>
+                            <div>🌐 www.neocode.io</div>
+                            <div>📍 London, UK EC1A 1BB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 2: Software Engineer</div>
+                    <div class="card-description">Modern tech company card with dark background and gold accents</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Marketing Manager -->
+            <div class="card">
+                <div class="card-image" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);">
+                    <div class="card-top">
+                        <div class="company-name" style="color: #333;">Creative Studios</div>
+                        <div class="company-tagline" style="color: #555;">Digital Marketing & Design</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name" style="color: #333;">Michael Chen</div>
+                        <div class="designation" style="color: #D32F2F;">Marketing Manager</div>
+                    </div>
+                    <div class="card-bottom" style="color: #333;">
+                        <div class="contact-info">
+                            <div>📧 michael@creativestudios.com</div>
+                            <div>📱 +86-10-6565-2108</div>
+                            <div>🌐 www.creativestudios.com</div>
+                            <div>📍 Beijing, China 100000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 3: Marketing Manager</div>
+                    <div class="card-description">Colorful creative agency card with warm gradient colors</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+
+            <!-- Card 4: Consultant -->
+            <div class="card">
+                <div class="card-image" style="background: white; border: 2px solid #333;">
+                    <div class="card-top" style="text-align: left;">
+                        <div class="company-name" style="color: #333;">APEX Consulting</div>
+                        <div class="company-tagline" style="color: #666;">Strategy & Business Solutions</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name" style="color: #333;">Dr. Priya Sharma</div>
+                        <div class="designation" style="color: #1976D2;">Business Consultant</div>
+                    </div>
+                    <div class="card-bottom" style="color: #555;">
+                        <div class="contact-info">
+                            <div>📧 priya@apexconsult.in</div>
+                            <div>📱 +91-11-4000-1111</div>
+                            <div>🌐 www.apexconsult.in</div>
+                            <div>📍 New Delhi, India 110001</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 4: Consultant</div>
+                    <div class="card-description">Corporate business card with minimalist black border design</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+
+            <!-- Card 5: HR Manager -->
+            <div class="card">
+                <div class="card-image" style="background: linear-gradient(135deg, #26C485 0%, #52B788 100%);">
+                    <div class="card-top">
+                        <div class="company-name" style="color: white;">People Plus HR</div>
+                        <div class="company-tagline" style="color: rgba(255,255,255,0.9);">Human Resources Excellence</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name" style="color: white;">Emily Davis</div>
+                        <div class="designation" style="color: #FFE66D;">HR Manager</div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="contact-info" style="color: white;">
+                            <div>📧 emily.davis@peopleplus.com</div>
+                            <div>📱 +1-800-555-0147</div>
+                            <div>🌐 www.peopleplus.com</div>
+                            <div>📍 New York, NY 10001</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 5: HR Manager</div>
+                    <div class="card-description">Human resources company card with green gradient design</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+
+            <!-- Card 6: Financial Advisor -->
+            <div class="card">
+                <div class="card-image" style="background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); color: white;">
+                    <div class="card-top">
+                        <div class="company-name" style="color: white;">Wealth & Trust Financial</div>
+                        <div class="company-tagline" style="color: rgba(255,255,255,0.8);">Professional Financial Advisory</div>
+                    </div>
+                    <div class="card-middle">
+                        <div class="person-name" style="color: white;">Robert Thompson</div>
+                        <div class="designation" style="color: #FBBF24;">Financial Advisor</div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="contact-info">
+                            <div>📧 robert@wealthandtrust.com</div>
+                            <div>📱 +1-212-555-0192</div>
+                            <div>🌐 www.wealthandtrust.com</div>
+                            <div>📍 Toronto, Canada M5V 3A8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Card 6: Financial Advisor</div>
+                    <div class="card-description">Professional finance company card with blue gradient design</div>
+                    <button class="download-btn" onclick="downloadCard(this)">📸 Screenshot This Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadCard(button) {
+            const card = button.closest('.card').querySelector('.card-image');
+            alert('📸 Please take a screenshot of the card image above and save it as JPG or PNG file. Then upload it to the OCR system!');
+        }
+    </script>
+</body>
+</html>

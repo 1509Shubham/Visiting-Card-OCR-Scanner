@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Visiting Card - OCR Scanner</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Visiting Card OCR Scanner</div>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="upload.html" class="active">Upload Card</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="upload-section">
+            <h1>Upload Visiting Card</h1>
+            
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2v20M2 12h20"></path>
+                    </svg>
+                    <h3>Drag and drop your image here</h3>
+                    <p>or click to select a file</p>
+                    <input 
+                        type="file" 
+                        id="fileInput" 
+                        accept="image/jpeg,image/png,image/jpg,.pdf"
+                        style="display: none"
+                    >
+                </div>
+            </div>
+
+            <div class="supported-formats">
+                <h4>Supported Formats:</h4>
+                <ul>
+                    <li>JPG / JPEG</li>
+                    <li>PNG</li>
+                    <li>PDF</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="processingSection" class="processing-section" style="display: none;">
+            <h2>Processing Visiting Card...</h2>
+            
+            <div class="preview-container">
+                <div class="preview-image">
+                    <img id="previewImage" src="" alt="Preview">
+                </div>
+                
+                <div class="extracted-data">
+                    <h3>Extracted Information</h3>
+                    <form id="extractedForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <input type="text" id="designation" name="designation">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company_name">Company Name</label>
+                            <input type="text" id="company_name" name="company_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="tel" id="mobile" name="mobile">
+                            <span class="error-message" id="mobileError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" name="website">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confidence">OCR Confidence Score</label>
+                            <input type="text" id="confidence" name="confidence" disabled>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="cancelUpload()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Contact</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="rawOCRText" class="raw-ocr-section">
+                <details>
+                    <summary>View Raw OCR Text</summary>
+                    <pre id="rawTextContent"></pre>
+                </details>
+            </div>
+        </section>
+
+        <section id="duplicateSection" class="duplicate-section" style="display: none;">
+            <h2>Duplicate Contact Found</h2>
+            <p>A contact with similar information already exists in the database.</p>
+            
+            <div class="duplicate-info">
+                <div class="existing-contact">
+                    <h3>Existing Contact</h3>
+                    <div id="existingContactInfo"></div>
+                </div>
+                
+                <div class="new-contact">
+                    <h3>New Information from Card</h3>
+                    <div id="newContactInfo"></div>
+                </div>
+            </div>
+
+            <div class="duplicate-actions">
+                <button class="btn btn-secondary" onclick="cancelUpload()">Cancel</button>
+                <button class="btn btn-warning" onclick="saveDuplicate()">Save Anyway</button>
+                <button class="btn btn-primary" onclick="goToDashboard()">Go to Existing Contact</button>
+            </div>
+        </section>
+
+        <section id="successSection" class="success-section" style="display: none;">
+            <div class="success-message">
+                <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+                <h2>Contact Saved Successfully!</h2>
+                <p id="successMessage"></p>
+                <div class="success-actions">
+                    <button class="btn btn-primary" onclick="goToDashboard()">View Dashboard</button>
+                    <button class="btn btn-secondary" onclick="uploadAnother()">Upload Another Card</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/upload.js"></script>
+</body>
+</html>

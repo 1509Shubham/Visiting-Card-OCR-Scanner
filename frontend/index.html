@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Visiting Card OCR Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Visiting Card OCR Scanner</div>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="upload.html">Upload Card</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="dashboard">
+            <h1>Contacts Dashboard</h1>
+            
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by name, email, or mobile..."
+                    class="search-input"
+                >
+                <button class="btn btn-primary" onclick="searchContacts()">Search</button>
+                <button class="btn btn-secondary" onclick="resetSearch()">Reset</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalContacts">0</div>
+                    <div class="stat-label">Total Contacts</div>
+                </div>
+            </div>
+
+            <div class="contacts-table-wrapper">
+                <table class="contacts-table" id="contactsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Company</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactsTableBody">
+                        <tr class="loading">
+                            <td colspan="6">Loading contacts...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="btn btn-secondary" onclick="previousPage()">Previous</button>
+                <span id="pageInfo">Page 1</span>
+                <button class="btn btn-secondary" onclick="nextPage()">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Detail Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="contactDetails"></div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

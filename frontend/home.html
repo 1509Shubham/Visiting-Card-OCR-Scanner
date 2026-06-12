@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visiting Card OCR Scanner</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Visiting Card OCR Scanner</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="upload.html">Upload Card</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Visiting Card OCR Scanner</h1>
+                    <p class="subtitle">Intelligent Visiting Card Recognition & Data Extraction</p>
+                    <p class="description">Upload your visiting cards and let our AI extract all the information automatically</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="upload.html" class="btn btn-primary btn-large">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2v20M2 12h20"></path>
+                            </svg>
+                            Upload Card Now
+                        </a>
+                        <a href="dashboard.html" class="btn btn-secondary btn-large">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            View Contacts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Status Section -->
+        <section class="api-status">
+            <div class="container">
+                <h2>System Status</h2>
+                <div class="status-grid">
+                    <div class="status-card" id="apiStatus">
+                        <div class="status-icon loading"></div>
+                        <h3>API Server</h3>
+                        <p class="status-text">Checking...</p>
+                    </div>
+                    <div class="status-card" id="dbStatus">
+                        <div class="status-icon loading"></div>
+                        <h3>Database</h3>
+                        <p class="status-text">Checking...</p>
+                    </div>
+                    <div class="status-card" id="contactsCount">
+                        <div class="status-number">0</div>
+                        <h3>Total Contacts</h3>
+                        <p class="status-text">Saved in database</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Smart OCR</h3>
+                        <p>Advanced optical character recognition with 95%+ accuracy</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>AI Entity Recognition</h3>
+                        <p>Automatically identifies names, emails, phones, companies</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚫</div>
+                        <h3>Duplicate Detection</h3>
+                        <p>Prevents duplicate entries by email and mobile number</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Secure Storage</h3>
+                        <p>All data stored securely in local database</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive Design</h3>
+                        <p>Works on desktop, tablet, and mobile devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Processing</h3>
+                        <p>Quick card processing and data extraction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Card</h3>
+                        <p>Choose or drag & drop your visiting card image (JPG, PNG, PDF)</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>OCR Processing</h3>
+                        <p>Our AI extracts text and identifies key information</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Review & Correct</h3>
+                        <p>Verify extracted data and make manual corrections if needed</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Save Contact</h3>
+                        <p>Contact is saved and available in your dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Formats Section -->
+        <section class="supported-formats">
+            <div class="container">
+                <h2>Supported Formats</h2>
+                <div class="formats-grid">
+                    <div class="format-item">
+                        <div class="format-icon">🖼️</div>
+                        <p>JPG / JPEG</p>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">🎨</div>
+                        <p>PNG</p>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">📄</div>
+                        <p>PDF</p>
+                    </div>
+                </div>
+                <p class="format-note">Maximum file size: 10 MB</p>
+            </div>
+        </section>
+
+        <!-- API Info Section -->
+        <section class="api-info">
+            <div class="container">
+                <h2>API Documentation</h2>
+                <div class="api-links">
+                    <div class="api-link-card">
+                        <h3>Interactive API Docs</h3>
+                        <p>Explore and test all API endpoints</p>
+                        <a href="http://localhost:8000/docs" target="_blank" class="btn btn-primary">Visit Docs →</a>
+                    </div>
+                    <div class="api-link-card">
+                        <h3>API Base URL</h3>
+                        <p>http://localhost:8000/api/v1</p>
+                        <code>GET /contacts</code>
+                    </div>
+                    <div class="api-link-card">
+                        <h3>Health Check</h3>
+                        <p>http://localhost:8000/health</p>
+                        <code>{"status":"healthy"}</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Visiting Card OCR Scanner. All rights reserved.</p>
+                <p class="version">Version 1.0.0</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="/home.js"></script>
+</body>
+</html>
