@@ -1,0 +1,161 @@
+GITHUB REPOSITORY DESCRIPTION & README
+
+=== SHORT DESCRIPTION (For GitHub repo) ===
+🎯 An intelligent, full-stack OCR-based system for scanning visiting cards, extracting structured contact information, and managing contacts with duplicate detection.
+
+=== TAGS/KEYWORDS ===
+ocr, visiting-card, fastapi, easyocr, contact-management, web-app, machine-learning, python, rest-api, sqlite
+
+=== TOPICS ===
+- ocr
+- deep-learning  
+- computer-vision
+- fastapi
+- easyocr
+- contact-management
+- machine-learning
+- python
+- sqlite
+- rest-api
+- web-application
+
+=== FULL DESCRIPTION ===
+
+# 🎯 Visiting Card OCR Scanner
+
+An intelligent, full-stack OCR-based system for scanning visiting cards, extracting structured contact information, and managing contacts with duplicate detection.
+
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-green)](https://fastapi.tiangolo.com/)
+[![EasyOCR](https://img.shields.io/badge/OCR-EasyOCR-orange)](https://github.com/JaidedAI/EasyOCR)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+## ✨ Features
+
+- 🔍 **Intelligent OCR Recognition** - Extracts text from visiting cards using EasyOCR with 90%+ accuracy
+- 🤖 **Smart Entity Extraction** - Automatically identifies name, email, phone, company, designation, website, and address
+- 🔗 **Duplicate Detection** - Prevents duplicate contacts by checking email and mobile number  
+- 💾 **Contact Management** - Full CRUD operations with pagination and search functionality
+- 📱 **Responsive UI** - Modern, user-friendly web interface for desktop and mobile
+- ⚡ **RESTful API** - 7 well-documented endpoints with auto-generated Swagger docs
+- 🛡️ **Data Validation** - Pydantic schemas ensure data integrity
+- 📊 **Real-time Dashboard** - View, search, and manage all contacts
+- 🖼️ **Image Storage** - Uploaded card images are securely stored and retrievable
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/1509Shubham/Visiting-Card-OCR-Scanner.git
+cd Visiting-Card-OCR-Scanner
+
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the server
+python run.py
+```
+
+Access the application:
+- **Frontend**: http://localhost:8000
+- **Upload Card**: http://localhost:8000/upload.html
+- **Dashboard**: http://localhost:8000/index.html
+- **API Docs**: http://localhost:8000/docs
+
+## 📚 Documentation
+
+- [README.md](README.md) - Complete setup & usage guide
+- [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md) - Architecture & Interview Q&A
+- [SETUP_GUIDE.md](SETUP_GUIDE.md) - Detailed installation steps
+- [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute
+
+## 🛠️ Technology Stack
+
+### Backend
+- **FastAPI 0.104.1** - Modern async web framework
+- **SQLAlchemy 2.0.23** - ORM for database
+- **Pydantic 2.5.0** - Data validation
+
+### OCR & Image Processing
+- **EasyOCR >=1.7.1** - Deep learning-based OCR
+- **Pillow >=10.0.0** - Image manipulation
+- **OpenCV 4.8.1.78** - Image preprocessing
+- **PyTorch 2.1.1** - Deep learning framework
+- **TorchVision 0.16.1** - Computer vision utilities
+
+### Database
+- **SQLite** - Lightweight file-based database
+
+### Frontend
+- **HTML5, CSS3, JavaScript** - No framework dependencies
+
+## 📊 API Endpoints
+
+```
+POST   /api/v1/visiting-card/upload    - Upload and process a visiting card
+GET    /api/v1/contacts                 - Get all contacts (paginated)
+GET    /api/v1/contact/{id}             - Get specific contact
+PUT    /api/v1/contact/{id}             - Update contact
+DELETE /api/v1/contact/{id}             - Delete contact
+GET    /api/v1/contacts/search          - Search contacts
+GET    /health                          - Health check
+```
+
+## 💡 Use Cases
+
+- Convert paper visiting cards to digital contacts
+- Bulk import business cards for CRM systems
+- Automate contact management workflows
+- Integrate OCR into business applications
+- Learn about OCR, deep learning, and web development
+
+## 📈 Performance
+
+| Operation | Time |
+|-----------|------|
+| OCR Processing | 2-5 seconds |
+| Entity Extraction | <100ms |
+| Database Save | <50ms |
+| **Total per card** | **~2-5 seconds** |
+
+## 🔐 Security
+
+✅ File type validation  
+✅ File size limits (10MB max)  
+✅ Filename sanitization  
+✅ CORS configured  
+✅ Input validation via Pydantic schemas  
+✅ Database transactions for data integrity
+
+## 🤝 Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **EasyOCR** - Deep learning OCR engine
+- **FastAPI** - Modern Python web framework
+- **SQLAlchemy** - Excellent ORM library
+- **PyTorch** - AI/ML framework
+
+---
+
+Made with ❤️ by Shubham
+
+**Project Status**: ✅ Complete & Fully Functional
+
+For issues or questions, please open a [GitHub Issue](https://github.com/1509Shubham/Visiting-Card-OCR-Scanner/issues)
